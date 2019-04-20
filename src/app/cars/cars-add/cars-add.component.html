@@ -1,0 +1,61 @@
+<form autocomplete="off" #form="ngForm" (change)="debug(form)" (ngSubmit)="processForm(form.value); form.reset();">
+  <fieldset>    
+  <legend> 
+        Car Info
+    </legend>
+    <div class="form-group col-md-6">
+      <input type="hidden" [(ngModel)] = "car.id" name="id">
+        <label for="brand">Brand</label> 
+           <input class="form-control" type="text" [(ngModel)]="car.brand" #brand="ngModel" id= "brand" name="brand">
+    </div>
+    
+    <div class="form-group col-md-6">
+        <label for="brand">Model</label>
+    <input  class="form-control" type="text" [(ngModel)] ="car.model" id="model" name="model">
+    </div>
+    
+    <div class="form-group col-md-4"> 
+        <label for="year">Year</label>
+      <input class="form-control"  type="number" [(ngModel)] ="car.year" id="year" name="year">
+    </div>
+    
+      <div class="form-group col-md-4">
+          <label for="brand">Price</label>
+        <input class="form-control"  type="number" [(ngModel)] ="car.price" id="price" name="price">
+      </div>
+    
+      <div class="form-group  col-md-4">
+          <label for="brand">Kilometers</label>
+      <input class="form-control"  type="number" [(ngModel)] ="car.km" id="km" name="km">
+    </div>
+  </fieldset>
+  <fieldset ngModelGroup ="engine">
+    <legend>Engine Info</legend>
+    <div class="form-group col-md-12">
+      <label for="fuel">Fuel</label>
+      <select class="form-control" name="fuel" [(ngModel)] ="car.engine.fuel" id="fuel">
+        <option value="">--Empty --</option>>
+        <option value="petrol">-- Petrol --</option>>
+        <option value="diesel">-- Diesel--</option>>
+        <option value="electric">-- Electric --</option>>
+      </select>
+    </div>
+    <div class="form-group col-md-6">
+        <label for="power">Power</label>
+        <input class="form-control"  type="number" [(ngModel)] ="car.engine.power" id="power" name="power">
+    </div>
+    <div class="form-group col-md-6">
+        <label for="year">Consumption</label>
+        <input class="form-control"  type="number" [(ngModel)] ="car.engine.consumption" id="consumption" name="consumption">
+    </div>
+  </fieldset>
+  
+<div class="btn-group">
+
+<button class="btn btn-primary" [disabled] = "form.invalid" type="submit">{{ isAddAction(car.id) ? 'Add Car' : 'Edit Car' }}</button>
+<button class="btn btn-danger" type="submit">Reset</button>
+</div>
+
+</form>
+
+{{ form.value  | json}}

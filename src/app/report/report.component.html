@@ -1,0 +1,24 @@
+<h1>Car Report</h1>
+<table class= "table">
+<tr>
+  <td>Oldest Car in Lot</td>
+  <td> {{oldest?.brand}} - {{oldest?.model}} / from {{oldest?.year}} </td>
+</tr>
+<tr>
+  <td> Most Used</td>
+  <td> {{oldest?.brand}} - {{oldest?.model}} / {{oldest?.km}}</td>
+</tr>
+<tr>
+  <td> Most Efficient </td>
+  <td> {{mostEfficient?.brand}} - {{mostEfficient?.model}} / {{mostEfficient?.engine?.consuption}}</td>
+</tr>
+<tr>
+  <td> Most Expensive</td>
+  <td>  {{mostExpensive?.brand}} - {{mostExpensive?.model}} / {{ mostExpensive?.price | currency: 'EUR' }}</td>
+</tr>
+<tr>
+  <td>Total Value of Cars</td>
+  <td>{{ total | currency: 'EUR'}}</td>
+</tr>
+
+</table>
