@@ -1,0 +1,22 @@
+.containers{
+    max-width: 1800px;
+    margin: 0 auto;
+    background: #f9f9f9;
+    font-size: 24px;
+    padding: 25px;
+}
+.parallax{
+    background: url('../assets/images/p1.jpg') no-repeat center;
+    background-size: cover;
+    background-attachment:fixed;
+    height: 500px;
+    width: 100%;
+}
+
+.parallax2{
+    background: url('../assets/images/p3.jpg') no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 500px;
+    width: 95%;
+}
